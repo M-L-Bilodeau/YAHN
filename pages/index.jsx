@@ -1,92 +1,68 @@
+// pages/index.jsx
+
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { UserIcon, UsersIcon, HelpCircleIcon } from 'lucide-react';
 
 export default function Home() {
-  const [showYahn, setShowYahn] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
-    // Trigger fade-ins
-    const timer1 = setTimeout(() => setShowYahn(true), 1000);
-    const timer2 = setTimeout(() => setShowMessage(true), 2000);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
+    const timer = setTimeout(() => setShowOptions(true), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
-  const handleYahnClick = () => {
-    setShowOptions(true);
-  };
-
   return (
-    <div style={styles.container}>
-      <div
-        onClick={handleYahnClick}
-        style={{
-          ...styles.yahn,
-          opacity: showYahn ? 1 : 0,
-          transition: 'opacity 1s ease',
-        }}
-      >
-        YAHN
+    <div className="relative h-screen w-full bg-gradient-to-b from-[#fefefe] via-[#f0f4f8] to-[#dde5eb] flex items-center justify-center overflow-hidden">
+      {/* Wispy Background Texture */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute w-[60%] h-[60%] top-10 left-10 bg-white opacity-10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute w-[50%] h-[50%] bottom-10 right-10 bg-blue-100 opacity-10 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      <div
-        style={{
-          ...styles.message,
-          opacity: showMessage ? 1 : 0,
-          transition: 'opacity 1s ease',
-        }}
-      >
-        You made it. I'm happy you're here. Welcome.
+      {/* Top-right HALP Link */}
+      <div className="absolute top-4 right-6 text-sm text-blue-800 font-medium">
+        <a href="/halp" className="hover:underline">HALP!</a>
       </div>
 
+      {/* YAHN Logo */}
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.75 }}
+          className="text-6xl md:text-8xl font-bold text-blue-800 cursor-pointer z-10"
+          onClick={() => setShowOptions(!showOptions)}
+        >
+          YAHN
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Options */}
       {showOptions && (
-        <div style={{ ...styles.optionsContainer, opacity: showOptions ? 1 : 0, transition: 'opacity 1s ease' }}>
-          <div style={styles.option}>👤 Personal</div>
-          <div style={styles.option}>💬 Group</div>
-          <div style={styles.option}>ℹ️ About</div>
-        </div>
+        <motion.div
+          className="absolute bottom-20 flex gap-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <Option icon={<UserIcon className="w-8 h-8" />} text="Personal" href="/personal" />
+          <Option icon={<UsersIcon className="w-8 h-8" />} text="Group" href="/group" />
+          <Option icon={<HelpCircleIcon className="w-8 h-8" />} text="About" href="/about" />
+        </motion.div>
       )}
     </div>
   );
 }
 
-const styles = {
-  container: {
-    height: '100vh',
-    background: 'linear-gradient(135deg, #d1e0e0, #f0f0f0)', // soft pastel cloud-like gradient
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    fontFamily: 'Arial, sans-serif',
-  },
-  yahn: {
-    fontSize: '3em',
-    fontWeight: 'bold',
-    color: '#6a6a6a',
-    cursor: 'pointer',
-  },
-  message: {
-    marginTop: '20px',
-    fontSize: '1.2em',
-    color: '#6a6a6a',
-    textAlign: 'center',
-  },
-  optionsContainer: {
-    marginTop: '40px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  option: {
-    margin: '10px',
-    fontSize: '1.5em',
-    color: '#6a6a6a',
-    cursor: 'pointer',
-  },
-};
+function Option({ icon, text, href }) {
+  return (
+    <a
+      href={href}
+      className="flex flex-col items-center text-blue-800 hover:text-blue-500 transition-colors"
+    >
+      {icon}
+      <span className="mt-2 text-lg font-medium">{text}</span>
+    </a>
+  );
+}
