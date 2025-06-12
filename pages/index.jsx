@@ -14,24 +14,26 @@ export default function Home() {
 
   return (
     <div className="relative h-screen w-full bg-gradient-to-b from-[#fefefe] via-[#f0f4f8] to-[#dde5eb] flex items-center justify-center overflow-hidden">
-      {/* Wispy Background Texture */}
+      {/* Enhanced Wispy Cloud Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute w-[60%] h-[60%] top-10 left-10 bg-white opacity-10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute w-[50%] h-[50%] bottom-10 right-10 bg-blue-100 opacity-10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute w-[40%] h-[40%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-50 opacity-20 rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute w-[30%] h-[30%] top-[15%] right-[20%] bg-purple-100 opacity-10 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       {/* Top-right HALP Link */}
-      <div className="absolute top-4 right-6 text-sm text-blue-800 font-medium">
+      <div className="absolute top-4 right-6 text-sm text-blue-800 font-medium z-20">
         <a href="/halp" className="hover:underline">HALP!</a>
       </div>
 
-      {/* YAHN Logo */}
+      {/* YAHN Logo - Increased 50% */}
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.75 }}
-          className="text-6xl md:text-8xl font-bold text-blue-800 cursor-pointer z-10"
+          className="text-[6rem] md:text-[12rem] font-bold text-blue-800 cursor-pointer z-10"
           onClick={() => setShowOptions(!showOptions)}
         >
           YAHN
@@ -66,4 +68,3 @@ function Option({ icon, text, href }) {
     </a>
   );
 }
-
