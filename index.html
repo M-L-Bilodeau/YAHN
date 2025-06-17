@@ -11,8 +11,12 @@
     />
     <style>
       body {
-        background: linear-gradient(180deg, #ffe5e0 0%, #fff8f0 100%);
-        animation: floatClouds 30s ease-in-out infinite;
+        background: #3a2d2d;
+        background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 10%, transparent 11%),
+          radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.07) 10%, transparent 11%),
+          radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.06) 10%, transparent 11%);
+        background-size: 300% 300%;
+        animation: floatClouds 60s ease-in-out infinite;
         overflow-x: hidden;
       }
 
@@ -40,48 +44,48 @@
       }
     </style>
   </head>
-  <body class="text-gray-800 flex flex-col items-center justify-center min-h-screen relative font-sans">
+  <body class="text-gray-100 flex flex-col items-center justify-center min-h-screen relative font-sans">
     <!-- HALP! link -->
     <div class="absolute top-4 right-4">
       <a
         href="https://988lifeline.org/"
         target="_blank"
-        class="text-red-600 hover:text-red-800 font-bold text-lg animate-pulse"
+        class="text-red-500 hover:text-red-700 font-bold text-lg animate-pulse"
         >HALP!</a
+      >
+    </div>
+
+    <!-- Donation link -->
+    <div class="absolute top-4 left-1/2 transform -translate-x-1/2">
+      <a
+        href="#donate"
+        class="text-rose-300 hover:text-rose-500 text-sm underline"
+        >Help others find the way</a
       >
     </div>
 
     <!-- YAHN Title -->
     <h1
-      class="text-6xl md:text-7xl font-bold text-rose-600 mb-8 animate-fade-in"
-      style="animation: fadeIn 2s ease-out forwards"
+      class="text-[10rem] font-bold text-rose-400 mb-12 animate-fade-in"
+      style="animation: fadeIn 4s ease-out forwards"
     >
       YAHN
     </h1>
 
     <!-- Icon Row -->
-    <div class="flex gap-12 md:gap-20 text-rose-600">
-      <a href="/self.html" class="flex flex-col items-center hover:text-rose-800">
-        <i class="fas fa-user text-4xl"></i>
-        <span class="mt-2 text-lg">Self</span>
+    <div class="flex gap-12 md:gap-20 text-rose-400">
+      <a href="/self.html" class="flex flex-col items-center hover:text-rose-500">
+        <i class="fas fa-user text-5xl"></i>
+        <span class="mt-2 text-xl">Self</span>
       </a>
-      <a href="/group.html" class="flex flex-col items-center hover:text-rose-800">
-        <i class="fas fa-users text-4xl"></i>
-        <span class="mt-2 text-lg">Others</span>
+      <a href="/group.html" class="flex flex-col items-center hover:text-rose-500">
+        <i class="fas fa-users text-5xl"></i>
+        <span class="mt-2 text-xl">Others</span>
       </a>
-      <a href="/about.html" class="flex flex-col items-center hover:text-rose-800">
-        <i class="fas fa-question-circle text-4xl"></i>
-        <span class="mt-2 text-lg">About</span>
+      <a href="/about.html" class="flex flex-col items-center hover:text-rose-500">
+        <i class="fas fa-question-circle text-5xl"></i>
+        <span class="mt-2 text-xl">About</span>
       </a>
-    </div>
-
-    <!-- Donation link -->
-    <div class="mt-12">
-      <a
-        href="#donate"
-        class="text-rose-500 hover:text-rose-700 text-base underline"
-        >Help others find the way</a
-      >
     </div>
   </body>
 </html>
