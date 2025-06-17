@@ -11,10 +11,11 @@
     />
     <style>
       body {
-        background: linear-gradient(180deg, #ffe4d6, #fbe3d4, #ffe3b3);
+        background: radial-gradient(circle at 50% 30%, #ffe9d6, #ffdfba, #ffd9a3);
         background-size: 400% 400%;
         animation: cloudDrift 60s linear infinite;
         overflow-x: hidden;
+        position: relative;
       }
 
       body::before {
@@ -24,11 +25,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 80%),
-                    radial-gradient(circle, rgba(255, 255, 255, 0.06) 15%, transparent 70%);
-        background-size: 200% 200%;
-        animation: mistFall 80s linear infinite;
+        background: 
+          url('https://www.transparenttextures.com/patterns/clouds.png') repeat;
+        background-size: 800px;
+        opacity: 0.12;
+        animation: mistFall 60s linear infinite;
         z-index: 0;
+        pointer-events: none;
       }
 
       @keyframes cloudDrift {
@@ -38,8 +41,8 @@
       }
 
       @keyframes mistFall {
-        0% { background-position: 0% 0%; }
-        100% { background-position: 0% 100%; }
+        0% { transform: translateY(0); }
+        100% { transform: translateY(100%); }
       }
 
       @keyframes fadeIn {
@@ -76,7 +79,7 @@
 
     <!-- YAHN Title -->
     <h1
-      class="text-[6rem] font-bold text-gray-800 mb-12 animate-fade-in z-10"
+      class="text-[12rem] font-bold text-gray-800 mb-12 animate-fade-in z-10"
       style="animation: fadeIn 4s ease-out forwards"
     >
       YAHN
@@ -85,16 +88,16 @@
     <!-- Icon Row -->
     <div class="flex gap-12 md:gap-20 text-gray-800 z-10">
       <a href="/self.html" class="flex flex-col items-center hover:text-gray-900">
-        <i class="fas fa-user text-4xl"></i>
-        <span class="mt-2 text-lg">Self</span>
+        <i class="fas fa-user text-2xl"></i>
+        <span class="mt-1 text-sm">Self</span>
       </a>
       <a href="/group.html" class="flex flex-col items-center hover:text-gray-900">
-        <i class="fas fa-users text-4xl"></i>
-        <span class="mt-2 text-lg">Others</span>
+        <i class="fas fa-users text-2xl"></i>
+        <span class="mt-1 text-sm">Others</span>
       </a>
       <a href="/about.html" class="flex flex-col items-center hover:text-gray-900">
-        <i class="fas fa-question-circle text-4xl"></i>
-        <span class="mt-2 text-lg">About</span>
+        <i class="fas fa-question-circle text-2xl"></i>
+        <span class="mt-1 text-sm">About</span>
       </a>
     </div>
   </body>
