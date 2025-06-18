@@ -13,36 +13,29 @@
       overflow-x: hidden;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-
     .donate-link {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
       text-decoration: none;
       color: #8a4f3d;
       font-weight: bold;
       font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      z-index: 1000;
     }
 
     .halp {
       position: fixed;
       top: 1rem;
       right: 1rem;
-      background: #d9534f;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      text-decoration: none;
+      color: #d9534f;
       font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
       z-index: 1001;
     }
 
@@ -53,7 +46,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding-top: 6rem;
     }
 
     .hero h1 {
@@ -116,21 +108,18 @@
 </head>
 <body>
 
-  <a href="https://988lifeline.org/" target="_blank" class="halp">HALP</a>
-
-  <header>
-    <a href="/donate.html" class="donate-link">Help others find the way</a>
-  </header>
+  <a href="/donate.html" class="donate-link">Help others find the way</a>
+  <a href="https://988lifeline.org/" target="_blank" class="halp">HALP!</a>
 
   <section class="hero">
     <h1>YAHN</h1>
     <div class="icon-row">
       <a href="#personal" class="icon">
-        <img src="single-person-icon.png" alt="Personal">
+        <img src="self-icon.png" alt="Personal">
         <span>Personal</span>
       </a>
       <a href="#group" class="icon">
-        <img src="group-of-three-icon.png" alt="Group">
+        <img src="group-icon.png" alt="Group">
         <span>Group</span>
       </a>
     </div>
