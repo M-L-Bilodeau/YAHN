@@ -2,15 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YAHN | You Are Here Now</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #f4f4f9 0%, #ffffff 100%);
+      background: linear-gradient(to bottom, #cfe7f2 0%, #ffffff 100%);
       color: #333;
       overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #2a6f97;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .halp {
+      background: #ff6b6b;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
     }
 
     .hero {
@@ -19,14 +46,15 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: url('your-cloud-background.jpg') no-repeat center center;
-      background-size: cover;
       text-align: center;
+      padding-top: 4rem;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 5rem;
       margin-bottom: 2rem;
+      letter-spacing: 2px;
+      color: #2a6f97;
     }
 
     .icon-row {
@@ -82,7 +110,11 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <header>
+    <a href="/donate.html">Donate</a>
+    <a href="https://988lifeline.org/" target="_blank" class="halp">HALP</a>
+  </header>
+
   <section class="hero">
     <h1>YAHN</h1>
     <div class="icon-row">
@@ -115,7 +147,7 @@
   </section>
 
   <script>
-    // Scroll fade-in script
+    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
