@@ -1,104 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YAHN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <style>
-      body {
-        background: radial-gradient(circle at 50% 30%, #ffe9d6, #ffdfba, #ffd9a3);
-        background-size: 400% 400%;
-        animation: cloudDrift 60s linear infinite;
-        overflow-x: hidden;
-        position: relative;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YAHN | You Are Here Now</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #f4f4f9 0%, #ffffff 100%);
+      color: #333;
+      overflow-x: hidden;
+    }
 
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: 
-          url('https://www.transparenttextures.com/patterns/clouds.png') repeat;
-        background-size: 800px;
-        opacity: 0.12;
-        animation: mistFall 60s linear infinite;
-        z-index: 0;
-        pointer-events: none;
-      }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url('your-cloud-background.jpg') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+    }
 
-      @keyframes cloudDrift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
 
-      @keyframes mistFall {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(100%); }
-      }
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
 
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(-10px);
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    .icon img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section {
+      padding: 4rem 1rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>YAHN</h1>
+    <div class="icon-row">
+      <a href="#personal" class="icon">
+        <img src="personal-icon.png" alt="Personal">
+        <span>Personal</span>
+      </a>
+      <a href="#group" class="icon">
+        <img src="group-icon.png" alt="Group">
+        <span>Group</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Scroll-based About Section -->
+  <section class="fade-in-section" id="about">
+    <div class="section">
+      <h2>You Are Here Now (YAHN)</h2>
+      <p><strong>Mission:</strong> To remind each person: you are here, now—and that’s enough.</p>
+      <p><strong>What we’re building:</strong></p>
+      <ul style="text-align: left; margin: 0 auto; display: inline-block;">
+        <li>Peer support groups for trauma survivors, veterans, new mothers, and others</li>
+        <li>A seamless, calming digital platform that connects people without judgment</li>
+        <li>Local resource guides powered by AI to match people to care, food, shelter</li>
+        <li>An always-free space with no ads, gimmicks, or gatekeeping—just care</li>
+      </ul>
+      <p><strong>Who we are:</strong> Just regular people with jobs, kids, and full plates—building something extraordinary through care, resilience, and vision.</p>
+      <p>If this mission resonates with you, we welcome your support and collaboration.</p>
+    </div>
+  </section>
+
+  <script>
+    // Scroll fade-in script
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-  <body class="text-gray-800 flex flex-col items-center justify-center min-h-screen relative font-sans">
-    <!-- HALP! link -->
-    <div class="absolute top-4 right-4 z-10">
-      <a
-        href="https://988lifeline.org/"
-        target="_blank"
-        class="text-red-500 hover:text-red-700 font-bold text-lg animate-pulse"
-        >HALP!</a
-      >
-    </div>
+      });
+    });
 
-    <!-- Donation link -->
-    <div class="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
-      <a
-        href="/donate.html"
-        class="text-rose-600 hover:text-rose-800 text-sm underline"
-        >Help others find the way</a
-      >
-    </div>
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
-    <!-- YAHN Title -->
-    <h1
-      class="text-[12rem] font-bold text-gray-800 mb-12 animate-fade-in z-10"
-      style="animation: fadeIn 4s ease-out forwards"
-    >
-      YAHN
-    </h1>
-
-    <!-- Icon Row -->
-    <div class="flex gap-12 md:gap-20 text-gray-800 z-10">
-      <a href="/self.html" class="flex flex-col items-center hover:text-gray-900">
-        <i class="fas fa-user text-2xl"></i>
-        <span class="mt-1 text-sm">Self</span>
-      </a>
-      <a href="/group.html" class="flex flex-col items-center hover:text-gray-900">
-        <i class="fas fa-users text-2xl"></i>
-        <span class="mt-1 text-sm">Others</span>
-      </a>
-      <a href="/about.html" class="flex flex-col items-center hover:text-gray-900">
-        <i class="fas fa-question-circle text-2xl"></i>
-        <span class="mt-1 text-sm">About</span>
-      </a>
-    </div>
-  </body>
+</body>
 </html>
