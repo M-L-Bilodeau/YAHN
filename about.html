@@ -1,87 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About – YAHN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background: linear-gradient(to bottom, #fff6eb, #ffe3d4);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #4a3f35;
-      }
-    </style>
-  </head>
-  <body class="min-h-screen flex items-center justify-center px-6 py-12">
-    <div class="max-w-3xl w-full bg-white bg-opacity-80 p-8 rounded-xl shadow-lg">
-      <h1 class="text-4xl font-bold mb-6 text-center text-rose-600">A Passion Project</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YAHN | You Are Here Now</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #f4f4f9 0%, #ffffff 100%);
+      color: #333;
+      overflow-x: hidden;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url('your-cloud-background.jpg') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #444;
+      font-size: 1rem;
+    }
+    .icon img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section {
+      padding: 4rem 1rem;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
 
-      <p class="text-lg leading-relaxed mb-6">
-        Hey there! My name is Michael — welcome to my project. I’d like to tell you a bit about myself, and why <strong>You Are Here Now</strong> (YAHN) means so much to me.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        I grew up in a home shaped by trauma, poverty, and instability. There was abuse in my family, and like many who experience childhood trauma, I internalized the belief that I wasn’t safe — or enough.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        But I never stopped pushing forward.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        I graduated at the top of my class, earned a bachelor's degree in physics a year early, and built a career in IT. For a while, I had one of those dream “work from home, make good money” jobs. But deep down, I knew I needed something more. Something meaningful.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        That calling became impossible to ignore after my daughters were born — especially my youngest, who was born with serious heart defects.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        She had her first heart surgery at just two days old. Another at two weeks. And five more before she turned six.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        She’s doing great now — kind, smart, and more compassionate than anyone I’ve ever known. Through all the procedures, pain, and uncertainty, she smiled. She connected. She helped others. Her joy lit a fire in me.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        Inspired by her resilience — and by the care we received from doctors and nurses — I left IT. I started working at the children’s hospital where she’d had her surgeries. During the pandemic, I took advantage of remote learning, completed an MBA in healthcare administration, and began a Doctor of Public Health (DrPH) program.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        I wanted to be part of something bigger. I wanted to help others the way we had been helped.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        At the hospital, I saw more kids who reminded me of my own story — kids facing trauma, neglect, and impossible odds. And I started asking:
-      </p>
-
-      <ul class="list-disc list-inside text-lg mb-6">
-        <li>What could we do to better support children in crisis?</li>
-        <li>What if we could teach resilience from the start?</li>
-        <li>What if we empowered parents with real, lasting support?</li>
-        <li>What if mental health care was truly accessible — without shame or barriers?</li>
-      </ul>
-
-      <p class="text-lg leading-relaxed mb-6">
-        <strong>You Are Here Now</strong> is my answer to those questions.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        YAHN is a vision to meet people where they are — using the best tools we have, including integrative AI — to create something warm, welcoming, and real. A safe space. A place for connection. A place for guidance, hope, and healing.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-6">
-        Most of all, I want to bring us together — because we’ve all been through something. And too often, we think we have to go through it alone.
-      </p>
-
-      <p class="text-xl font-semibold text-center text-rose-700">
-        But you don’t.<br />
-        You’re here.<br />
-        Now.<br />
-        And that’s enough.
-      </p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>YAHN</h1>
+    <div class="icon-row">
+      <a href="#personal" class="icon">
+        <img src="personal-icon.png" alt="Personal">
+        <span>Personal</span>
+      </a>
+      <a href="#group" class="icon">
+        <img src="group-icon.png" alt="Group">
+        <span>Group</span>
+      </a>
+      <a href="#about" class="icon">
+        <img src="about-icon.png" alt="About">
+        <span>About</span>
+      </a>
     </div>
-  </body>
+  </section>
+
+  <!-- Scroll-based About Section -->
+  <section class="fade-in-section" id="about">
+    <div class="section">
+      <h2>You Are Here Now (YAHN)</h2>
+      <p><strong>Mission:</strong> To remind each person: you are here, now—and that’s enough.</p>
+      <p><strong>What we’re building:</strong></p>
+      <ul style="text-align: left; margin: 0 auto; display: inline-block;">
+        <li>Peer support groups for trauma survivors, veterans, new mothers, and others</li>
+        <li>A seamless, calming digital platform that connects people without judgment</li>
+        <li>Local resource guides powered by AI to match people to care, food, shelter</li>
+        <li>An always-free space with no ads, gimmicks, or gatekeeping—just care</li>
+      </ul>
+      <p><strong>Who we are:</strong> Just regular people with jobs, kids, and full plates—building something extraordinary through care, resilience, and vision.</p>
+      <p>If this mission resonates with you, we welcome your support and collaboration.</p>
+    </div>
+  </section>
+
+  <!-- Preserve remainder of homepage here -->
+  <!-- ... (e.g. Personal section, Group section, footer, etc.) -->
+
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
 </html>
