@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #f4f4f9 0%, #ffffff 100%);
+      background: linear-gradient(to bottom, #ffe8e0 0%, #fff5eb 100%);
       color: #333;
       overflow-x: hidden;
     }
@@ -24,9 +24,10 @@
       position: relative;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 6rem;
       margin-bottom: 2rem;
       z-index: 1;
+      color: #5a3e36;
     }
     .icon-row {
       display: flex;
@@ -39,7 +40,7 @@
       flex-direction: column;
       align-items: center;
       text-decoration: none;
-      color: #444;
+      color: #5a3e36;
       font-size: 1rem;
     }
     .icon img {
@@ -77,7 +78,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 2rem;
-      color: #aaa;
+      color: #aa6655;
       animation: pulse 2s infinite;
       z-index: 1;
     }
@@ -91,25 +92,48 @@
         opacity: 1;
       }
     }
+    .top-links {
+      position: absolute;
+      width: 100%;
+      top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 10;
+    }
+    .top-links a {
+      font-weight: bold;
+      color: #aa0000;
+      text-decoration: none;
+    }
+    .top-links .center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #c46;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Top Links -->
+  <div class="top-links">
+    <a href="https://988lifeline.org/" target="_blank">HALP!</a>
+    <a href="/donate.html" class="center">Help others find the way</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
     <h1>YAHN</h1>
     <div class="icon-row">
       <a href="#personal" class="icon">
-        <img src="personal-icon.png" alt="Personal">
-        <span>Personal</span>
+        <img src="self-icon.png" alt="Self">
+        <span>Self</span>
       </a>
       <a href="#group" class="icon">
         <img src="group-icon.png" alt="Group">
         <span>Group</span>
-      </a>
-      <a href="#about" class="icon">
-        <img src="about-icon.png" alt="About">
-        <span>About</span>
       </a>
     </div>
     <div class="down-arrow">&#8595;</div>
